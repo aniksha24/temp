@@ -1,130 +1,169 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        * {
-            margin: 0px;
-        }
+      * {
+        margin: 0px;
+      }
+      .c {
+        background-color: orange;
+      }
+      h3 {
+        background-color: orange;
+      }
+      #h {
+        position: sticky;
+        top: 0px;
+        background-color: orange;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .row {
+        background-color: silver;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+      }
+      .box {
+        /* background-color: teal; */
+        margin: 20px;
+        padding: 20px;
+        width: 300px;
+        border: 5px solid orange;
+        border-radius: 20px;
+        background: linear-gradient(maroon, silver);
+        box-shadow: 5px 5px 5px 5px gray;
+        transition-property: height;
+        transition-duration: 0.5s;
+      }
+      .box:hover{
+        transform:scale(1.5,1.5);
+    
+      }
 
-        .c {
-            background-color: chocolate;
-        }
-
-        .h1 {
-            top: 0px;
-            display: flex;
-            background-color: darkgrey;
-            padding: 20px;
-            position: sticky;
-            justify-content: space-between;
-        }
-
-        .row {
-            background-color: darkseagreen;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        .box {
-            /* background-color: lightblue; */
-            margin: 20px;
-            padding: 30px;
-            width: 300px;
-            border: 5px solid pink;
-            border-radius: 20px;
-            background: linear-gradient(lightblue, lightyellow);
-        }
-
-        .container {
-            position: absolute;
-            overflow: auto;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            bottom: 0px;
-            height: 100%;
-            scroll-behavior: smooth;
-        }
-
-        p {
-            font-size: 12px;
-            font-family: "verdana";
-            font-weight: bold;
-        }
-
-        .header {
-            background-image: url(images/1.webp);
-            background-size: cover;
-            justify-content: center;
-            align-items: end;
-        }
-
-        .caption {
-            background-color: aqua;
-            padding: 40px;
-            opacity: 0.5;
+      .container {
+        position: absolute;
+        scroll-behavior: smooth;
+        overflow: auto;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        height: 100%;
+      }
+      p {
+        font-size: 12px;
+        font-family: "verdana";
+        font-weight: bold;
+      }
+      .header {
+        background-image: url("images/1.webp");
+        background-size: cover;
+        justify-content: center;
+        align-items: end;
+      }
+      .caption {
+        background-color: red;
+        padding: 20px;
+        opacity: 0.4;
+        color: white;
+      }
+      ul{
+        margin:0px;
+        padding: 0px;
+      }
+      li{
+        display: inline-block;
+        padding:5px;
+        font
+      }
+      .submenu{
+        display: none;
+        position: absolute;
+        background-color: silver;
+      }
+      .menu:hover .submenu{
+        display: block;
+      }
+           .services-box{
+            background-color: greenyellow;
+            width:200px;
+            height:100%;
+            position:fixed;
+            right:0px;
+            top:90px;
+            left:0px;
+            display:none;
         }
     </style>
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="container">
-    <h1>TEMP 6</h1>
-    <!-- <h3 style="background-color: cadetblue;">MY APPLICATION</h3> -->
-    <!-- <h3 class="c">MY APPLICATION</h3> -->
-    <!-- <h3>MY APPLICATION</h3> -->
-    
-        <div class="h1">
-            <div>
-                <h3>MY APPLICATION</h3>
-            </div>
-            <div>
-                <a href="#home">HOME</a>
-                <a href="#services">SERVICES</a>
-                <a href="#about">ABOUT</a>
-                <a href="#login">LOGIN</a>
-            </div>
+    <h1>Temp 6</h1>
+    <!-- <h3 style="background-color: orange">My Application</h3> -->
+    <!-- <h3 class="c">My Application</h3> -->
+    <!-- <h3>My Application</h3> -->
+     
+    <div id="h">
+      <h3>My Application</h3>
+      <div>
+        <ul>
+        <li><a href="#home">Home</a></li>
+        <li class="menu">
+        <a href="#projects">Projects</a>
+        <div class="submenu">
+            <a href="#">Project 1</a><br>
+            <a href="#">Project 2</a>
         </div>
-  
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#" class="srvices-box">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+      </div>
+    </div>
     <div class="row header" id="home">
-
-        <div class="caption">
-            <h1>FULL STACK DEVELOPER</h1><br>
-            <P>MERN | JAVA | PYTHON</P>
-        </div>
+      <div class="caption">
+        <h1>Full Stack Developer</h1>
+        <p>MERN | MERN | Java | Python</p>
+      </div>
     </div>
-    <div class="row">
-        <div class="box" id="services">
-            <h2>PROJECT 1</h2>
-            <p>this is my project 1</p>
-            <a href="@">view project</a>
-        </div>
-        <div class="box" id="services">
-            <h2>PROJECT 2</h2>
-            <p>
-                this is my project 2
-            </p>
-            <a href="@">view project</a>
-        </div>
-        <DIV class="box" id="services">
-            <h2>PROJECT 3</h2>
-            <p>
-                this is my project 3
-            </p>
-            <a href="@">view project</a>
-        </DIV>
+    <div class="row" id="projects" >
+      <div class="box">
+        <h2>Project 1</h2>
+        <p>This is my project 1</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="box">
+        <h2>Project 2</h2>
+        <p>This is my project 2</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="box">
+        <h2>Project 3</h2>
+        <p>This is my project 3</p>
+        <a href="#">View Project</a>
+      </div>
     </div>
-    <div class="footer" id="login">
-        <h3>@Copyright 2024.All Rights Reserved.</h3>
+    <div>
+      <h3>@Copyright 2024. All rights reserved.</h3>
     </div>
-</div>
-</body>
-
+    <div class="">
+        <h1>Services:</h1>
+        <ol>
+            <li>1.Web Development</li>
+            <li>2.Mobile App Development</li>
+            <li>3.Backend Development</li>
+        </ol>
+    </div>
+    
+  </div>
+  </body>
 </html>
