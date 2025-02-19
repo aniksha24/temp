@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function op(){
+                let i=document.getElementById("text").value;
+                let j=document.getElementById("type").value;
+                document.getElementById("data").style.color=i;
+                document.getElementById("data").style.background=j;
+        }
+    </script>
+</head>
+<body>
+    <p><input type="text" id="text"></p>
+        <p><select id="type">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+        </select></p>
+        <p><button onclick="op()"> Submit</button></p>
+        <div id="data">HELLO WORLD</div>
+
+</body>
+</html>
