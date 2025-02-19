@@ -104,6 +104,7 @@
         <div id="root"></div>
     </div>
     <script>
+        const months=["Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"]
         const showData = () => {
             let firstname = document.getElementById("firstname").value;
             let surname = document.getElementById("surname").value;
@@ -126,6 +127,8 @@
           <p>Password:${password}</p>
           <p>Gender:${g}</p>
           <p>Date of Birth:${dob}</p>
+          <p><button onclick='showData()'>Edit</button>
+        <button>Confirm</button></p>
         </div>
         `;
             root.innerHTML = str;
@@ -197,17 +200,17 @@
         showForm();
         let str = "";
         for (let i = 1; i <= 31; i++) {
-            str += `<option>${i}</option>`;
+            str += `<option ${i==5 && "selected"}>${i}</option>`;
         }
         day.innerHTML = str;
         str = "";
         for (let i = 1; i <= 12; i++) {
-            str += `<option>${i}</option>`;
+            str += `<option ${i==7 && "selected"} >${i}</option>`;
         }
         month.innerHTML = str;
         str = "";
         for (let i = 1905; i <= 2025; i++) {
-            str += `<option>${i}</option>`;
+            str += `<option ${i==2023 && "selected"}>${i}</option>`;
         }
         year.innerHTML = str;
 
