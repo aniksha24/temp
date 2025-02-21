@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+           display:flex;
+           justify-content: center;
+    }
+    .box{
+        margin:20px;
+    }
+</style>
+<body>
+    <div id="data"></div>
+    <script>
+        let prod = [
+            {
+                id: 1,
+                name: "Product1",
+                price: 45,
+                desc: "This is the description of the product",
+                url: "https://picsum.photos/id/1/300/300"
+              
+            },
+            {
+                id: 2,
+                name: "Product2",
+                price: 54,
+                desc: "This is the description of the product",
+                url: "https://picsum.photos/id/2/300/300"
+            
+            },
+            {
+            id: 3,
+                name: "Product3",
+                price: 90,
+                desc: "This is the description of the product",
+                url: "https://picsum.photos/id/3/300/300"
+                
+            },
+            {
+            id: 4,
+                name: "Product4",
+                price: 100,
+                desc: "This is the description of the product",
+                url: "https://picsum.photos/id/3/300/300"
+                
+            },
+             {
+            id: 5,
+                name: "Product5",
+                price: 190,
+                desc: "This is the description of the product",
+                url: "https://picsum.photos/id/3/300/300"
+                
+            },
+        ];
+        let len = prod.length;
+        let str = "<div class='container'>"
+        for (let i = 0; i < len; i++) {
+            str = str + `<div class='box'><img src='${prod[i].url}'><h3>${prod[i].name}</h3><p></p><h3>
+                <h3>${prod[i].price}</h3><h3>${prod[i].desc}</h3><button>Add to cart</button></div>`
+        }
+        str=str+"</div>"
+        data.innerHTML = str
+        
+        
+    </script>
+    
+</body>
+
+</html>

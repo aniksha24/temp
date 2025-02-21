@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let users = [];
+        let useremail = ""
+        let username = ""
+        let currbalance = 0;
+        function op() {
+            let amount = parseFloat(document.getElementById("amount").value);
+            let type = document.getElementById("type").value;
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == useremail) {
+                    if (type == "1") {
+                        users[i].balance += amount;
+                    } 
+                    else if (type == "2") {
+                        if (users[i].balance < amount) {
+                            spbalance.innerHTML = "Insufficient balance";
+                            return;
+                        }
+                        users[i].balance -= amount;
+                    }
+                    spbalance.innerHTML = users[i].balance;
+                    break;
+                }
+            }
+        }
+
+
+        function home() {
+            let str = `
+                <h2>Welcome ${username}</h2>
+                <p><button onclick='showLogin()'>Log out</button></p>
+                <p><input type="number" id="amount" placeholder="enter number"></p>
+                <p><select id="type">
+                    <option value=0>Select</option>
+                    <option value=1>Deposit</option>
+                    <option value=2>Withdraw</option>
+                    <option value=3>Transfer</option>
+                    </select></p>
+                    <p><select id="selUser"
+                    <button onclick='op()'>Submit</button>
+                <p>Current Balance: <span id='spbalance'>${currbalance}</p>
+            `;
+            root.innerHTML = str;
+        }
+        function adduser() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let dob = document.getElementById("dob").value;
+            let user = {
+                name: name,
+                email: email,
+                password: password,
+                dob: dob,
+                balance: 0
+            }
+            users.push(user)
+            showLogin();
+        }
+        function po() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == email && users[i].password == password) {
+                    useremail = email
+                    username = users[i].name
+                    currbalance = users[i].balance
+                    home();
+                    break;
+                }
+                else {
+                    msg.innerHTML = "Access Denied"
+                }
+            }
+        }
+        function showLogin() {
+            let str = `
+            <div>
+                <h1>Login Form</h1>
+                <div id='msg'></div>
+                <p><input type="email" id="email" placeholder="enter email"></p>
+                <p><input type="password" id="password"></p>
+                <button onclick="po()">Log in</button>
+                <p><button onclick="showForm()">Create Account</button></p>    
+            </div>
+            `
+            root.innerHTML = str;
+        }
+        function showForm() {
+            let str = ` <div>
+                <h1>Registration Form</h1>
+                <p><input type="text" id="name" placeholder="enter name"></p>
+                <p><input type="email" id="email" placeholder="enter email"></p>
+                <p><input type="password" id="password"></p>
+                <p><input type="date" id="dob"></p>
+                <button onclick="adduser()">Submit</button>
+                <p>Already a member?<button onclick='showLogin()'>Login Here</button></p>
+                `
+            root.innerHTML = str;
+        }
+    </script>
+</head>
+
+<body onload="showLogin()">
+    <!-- while we want to print a hello world we should create function and call it -->
+    <h1>HDFC BANK</h1>
+    <hr />
+    <div id="root"></div>
+    <hr>
+    <footer>@COPYRIGHT 2025.ALL RIGHTS ARE RESERVED</footer>
+
+</body>
+
+</html>

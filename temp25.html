@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="assets/images/5.png" width="100px" id="ball">
+    <script>
+        ball.style.position="absolute";
+        let to=0;
+        let l=0;
+        function ballFall(){
+            to++;
+            if (to>400){ to=1
+                l=Math.random()*500;
+            }
+            ball.style.top=to+"px";
+            ball.style.left=l+"px";
+            setTimeout(ballFall,10);
+        }
+        ballFall()
+        
+    </script>
+</body>
+</html>
